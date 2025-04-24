@@ -1,0 +1,29 @@
+.titulo{
+    color:beige;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.imagem{
+    width: auto;
+    height: 350px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('fundo.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
