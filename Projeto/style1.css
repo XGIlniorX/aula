@@ -1,0 +1,41 @@
+.titulo{
+    text-align: center;
+    color: beige;
+    font-size: 50px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('photo-1663970206579-c157cba7edda.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.caixa{
+    border: 3px solid gray;
+    background-color: white;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 250px;
+    width: 500px;
+    height: 250px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filho{
+    border: 3px solid black;
+    margin: 60px;
+    border-radius: 6px;
+}
+.central{
+    text-align: center;
+    font-size: 50px;
+}
