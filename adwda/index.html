@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .todo-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #novaTarefa {
+      width: calc(100% - 50px);
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    #adicionar {
+      padding: 10px 15px;
+      margin-left: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: #eee;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    li.concluida {
+      text-decoration: line-through;
+      background-color: #d4edda;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 5px;
+    }
+
+    .botoes button {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 8px;
+      cursor: pointer;
+    }
+
+    .concluir-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .remover-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h2>Lista de Tarefas</h2>
+    <div style="display: flex;">
+      <input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
+      <button id="adicionar">+</button>
+    </div>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script>
+    const botaoAdicionar = document.getElementById("adicionar");
+    const inputTarefa = document.getElementById("novaTarefa");
+    const lista = document.getElementById("listaTarefas");
+
+    botaoAdicionar.addEventListener("click", adicionarTarefa);
+    inputTarefa.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") adicionarTarefa();
+    });
+
+    function adicionarTarefa() {
+      const texto = inputTarefa.value.trim();
+      if (texto === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = texto;
+
+      const botoes = document.createElement("div");
+      botoes.className = "botoes";
+
+      const btnConcluir = document.createElement("button");
+      btnConcluir.textContent = "✔";
+      btnConcluir.className = "concluir-btn";
+      btnConcluir.onclick = () => {
+        li.classList.toggle("concluida");
+      };
+
+      const btnRemover = document.createElement("button");
+      btnRemover.textContent = "✖";
+      btnRemover.className = "remover-btn";
+      btnRemover.onclick = () => {
+        lista.removeChild(li);
+      };
+
+      botoes.appendChild(btnConcluir);
+      botoes.appendChild(btnRemover);
+      li.appendChild(botoes);
+      lista.appendChild(li);
+
+      inputTarefa.value = "";
+      inputTarefa.focus();
+    }
+  </script>
+</body>
+</html>

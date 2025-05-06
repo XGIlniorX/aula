@@ -5,35 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor</title>
     <link rel="stylesheet" href="style1.css">
+    <script src="script.js"> </script>
 </head>
 <body>
-    <script src="script.js"></script>
-    <h1 class="titulo">Conversor de moeda</h1>
-
-    <div class="caixa">
-      <div class="filho"><input class="moeda"  type="number" placeholder="Digite o Valor" id="valor"/>
-        <select id="de">
-            <option value="BRL">BRL - Real</option>
-            <option value="USD">USD - Dólar</option>
-            <option value="EUR">EUR - Euro</option>
-            <option value="GBP">GBP - Libra</option>
-            <option value="JPY">JPY - Iene</option>
-          </select>
-          
-          <select id="para">
-            <option value="USD">USD - Dólar</option>
-            <option value="BRL">BRL - Real</option>
-            <option value="EUR">EUR - Euro</option>
-            <option value="GBP">GBP - Libra</option>
-            <option value="JPY">JPY - Iene</option>
-          </select>
-          <button id="converter">Converter</button>
-    </div>
-        <div class="central"> =</div>
-        <div class="filho"><p id="resultado"></p></div>
-    </div>
+  <div class="caixa">
+    <h1 class="titulo">Lista de Tarefas</h1>
+    <input class="input" id="tarefa" placeholder="Digite uma tarefa..." oninput="AjustarTamanho(this)">
+    <button class="butao" onclick="AdicionarTarefa()">✔</button>
+    <ul id="lista"></ul>
+  </div>
 
 
-    
 </body>
 </html>

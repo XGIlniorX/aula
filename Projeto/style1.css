@@ -1,41 +1,78 @@
-.titulo{
-    text-align: center;
-    color: beige;
-    font-size: 50px;
-}
 
 body{
     margin: 0;
-    padding: 0;
+    padding: 50px;
     background-image: url('photo-1663970206579-c157cba7edda.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    justify-content: center;
+    display: flex;
 }
 
 .caixa{
-    border: 3px solid gray;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* compatibilidade com Safari */
+    border: 2px solid rgba(255, 255, 255, 0.462);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    display: inline-block;
     position: relative;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 250px;
-    width: 500px;
-    height: 250px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.filho{
-    border: 3px solid black;
-    margin: 60px;
-    border-radius: 6px;
-}
-.central{
+.titulo{
+    font-size: 30px;
     text-align: center;
-    font-size: 50px;
+    color: rgb(223, 223, 223);
+}
+
+.input{
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.462);
+    border-radius: 5px;
+    height: 50px;
+    width: auto;
+    padding: 2px 40px;
+    display: block;
+    margin: auto;
+    margin-right: 50px;
+    width: 350px;
+}
+
+#espelho{
+    position: absolute;
+    visibility: hidden;
+    white-space: pre;
+}
+
+.butao{
+    border: 3px rgba(255, 255, 255, 0.462);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li{
+    background-color: transparent;
+     border: 3px rgba(255, 255, 255, 0.462);
+     margin-top: 3px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-radius: 3px;
+     padding: 0;
+}
+
+li.concluida{
+    
 }
